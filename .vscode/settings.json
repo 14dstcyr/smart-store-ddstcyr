@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+        "dask",
+        "dotenv",
+        "ipykernel",
+        "ipynb",
+        "ipython",
+        "ipywidgets",
+        "loguru",
+        "nltk",
+        "pathlib",
+        "plotly",
+        "pycache",
+        "pyenv",
+        "pyspark",
+        "pyttsx",
+        "setuptools",
+        "sqlalchemy",
+        "texter",
+        "venv"
+    ]
+}
