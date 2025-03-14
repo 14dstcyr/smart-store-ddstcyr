@@ -12,9 +12,9 @@ Sales Project
 
 ### Add the following folders in this specific order
 - data/
-      raw/
+      - raw/
 - scripts/
 - utils/
-       logger.py
+       - logger.py
 
 ### Be sure to git push the new information to your repository
