@@ -15,6 +15,6 @@ Sales Project
    - raw/
 - scripts/
 - utils/
-   - logger.py
+   - logger.py (this is going to be a file)
 
 ### Be sure to git push the new information to your repository
