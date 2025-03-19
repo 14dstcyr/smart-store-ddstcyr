@@ -23,13 +23,13 @@ Sales Project Instructions
 
       This is typically just done once at the beginning of a project. If it gets messed up, we can delete .venv and recreate it at any time.
   #### Before Starting
-      - Open your project repository in VS Code.
+  - Open your project repository in VS Code.
 
-      - We'll open a new terminal in VS Code and run a single command to create a new .venv folder for the local project virtual environment.
+  - We'll open a new terminal in VS Code and run a single command to create a new .venv folder for the local project virtual environment.
 
    #### Windows Users - Task 1. Create .venv
-      On Windows, Use PowerShell (not cmd):
-      - Run the following command from the project root directory.
+   On Windows, Use PowerShell (not cmd):
+  - Run the following command from the project root directory.
        py -m venv .venv
 
    #### Accept VS Code Suggestions
