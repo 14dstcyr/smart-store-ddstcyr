@@ -30,7 +30,7 @@ Sales Project Instructions
    #### Windows Users - Task 1. Create .venv
    On Windows, Use PowerShell (not cmd):
   - Run the following command from the project root directory.
-       py -m venv .venv
+         py -m venv .venv
 
    #### Accept VS Code Suggestions
     If VS Code asks: We noticed a new environment has been created. Do you want to select it for the workspace folder? Click Yes
