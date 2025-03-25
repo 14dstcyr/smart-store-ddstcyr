@@ -232,8 +232,8 @@ def main() -> None:
     logger.info(f"data / raw folder: {RAW_DATA_DIR}")
     logger.info(f"data / prepared folder: {PREPARED_DATA_DIR}")
 
-    input_file = "products_data.csv"
-    output_file = "products_data_prepared.csv"
+    input_file = "sales_data.csv"
+    output_file = "sales_data_prepared.csv"
     
     # Read raw data
     df = read_raw_data(input_file)
