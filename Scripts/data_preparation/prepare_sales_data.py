@@ -225,7 +225,7 @@ def main() -> None:
     Main function for processing product data.
     """
     logger.info("==================================")
-    logger.info("STARTING prepare_products_data.py")
+    logger.info("STARTING prepare_sales_data.py")
     logger.info("==================================")
 
     input_file = "sales_data.csv"
@@ -261,7 +261,7 @@ def main() -> None:
     save_prepared_data(df, output_file)
 
     logger.info("==================================")
-    logger.info("FINISHED prepare_products_data.py")
+    logger.info("FINISHED prepare_sales_data.py")
     logger.info("==================================")
 
 # -------------------
