@@ -173,6 +173,9 @@ def main() -> None:
     
     # Read raw data
     df = read_raw_data(input_file)
+    
+    # Remove empty columns (all NaN)
+    df = df.dropna(axis=1, how='all')
 
     # Log initial dataframe information
     logger.info(f"Initial dataframe columns: {', '.join(df.columns.tolist())}")
