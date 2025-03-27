@@ -102,7 +102,7 @@ class DataScrubber:
         
         Returns:
             pd.DataFrame: Updated DataFrame with outliers filtered out.
- 
+
         Raises:
             ValueError: If the specified column not found in the DataFrame.
         """
