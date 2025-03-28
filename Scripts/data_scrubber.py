@@ -175,7 +175,7 @@ class DataScrubber:
         
         Returns:
             tuple: (info_str, describe_str), where `info_str` is a string representation of DataFrame.info()
-                   and `describe_str` is a string representation of DataFrame.describe().
+                and `describe_str` is a string representation of DataFrame.describe().
         """
         buffer = io.StringIO()
         self.df.info(buf=buffer)
