@@ -81,13 +81,13 @@ class TestDataScrubber(unittest.TestCase):
         self.assertTrue(df_formatted['Name'].str.islower().all(), "Strings not formatted to lowercase correctly")
 
     def test_format_column_strings_to_upper_and_trim(self):
-    df = pd.DataFrame({'Name': [' alice ', 'Bob', 'charlie', None, '  DAVE  ']})
-    df_formatted = format_column_strings_to_upper(df, 'Name')  # Function being tested
+        df = pd.DataFrame({'Name': [' alice ', 'Bob', 'charlie', None, '  DAVE  ']})
+        df_formatted = format_column_strings_to_upper(df, 'Name')  # Function being tested
 
     # Debugging Step: Print the output before the assertion
-    print(df_formatted[['Name']])  # Add this line
+        print(df_formatted[['Name']])  # Add this line
 
-    self.assertTrue(df_formatted['Name'].str.isupper().all(), "Strings not formatted to uppercase correctly")
+        self.assertTrue(df_formatted['Name'].str.isupper().all(), "Strings not formatted to uppercase correctly")
 
     
     def test_handle_missing_data(self):
