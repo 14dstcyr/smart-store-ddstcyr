@@ -46,4 +46,24 @@ Sales Project Instructions
 ### Be sure to git push the new information to your repository in GitHub
 
 ### 
+---
+##### 02-Project-Initialization
+This section walks you through the steps to starting a new project [02-Project-Initialization] (./02-project-initialization/PROJECT-INITIALIZATION.md):
 
+1. Copy an existing project OR start a new project from scratch.
+2. Clone your new GitHub repo to your machine.
+3. Add common files such as .gitignore and requirements.txt.
+4. Git add-commit-push the changes to GitHub.
+5. Create a local project virtual environment for Python.
+   
+##### 03-Repeatable-Workflow
+Go to [03-Repeatable-Workflow] (./03-repeatable-workflow/REPEATABLE-WORKFLOW.md) for ongoing project development.
+---
+This section provides the repeatable steps for working on Python projects. These steps are typically followed whenever we make changes to a project. The workflow includes:
+
+1. Pull any recent changes from GitHub.
+2. Activate the virtual environment.
+3. Install dependencies.
+4. Run scripts and/or Jupyter notebooks.
+5. Make updates, verify the code still runs, and git add-commit-push to GitHub.
+---
