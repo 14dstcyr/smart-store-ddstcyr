@@ -17,37 +17,37 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
     """Create tables in the data warehouse if they don't exist."""
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS customer (
-            customer_id INTEGER PRIMARY KEY,
-            name TEXT,
-            region TEXT,
-            join_date TEXT,
-            reward_points INT,
-            contact_method TEXT
+            CustomerID INTEGER PRIMARY KEY,
+            Name TEXT,
+            Region TEXT,
+            JoinDate TEXT,
+            RewardPoints INT,
+            ContactMethod TEXT
         )
     """)
     
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS product (
-            product_id INTEGER PRIMARY KEY,
-            product_name TEXT,
-            category TEXT,
-            unit_price REAL,
-            stock_quantity INT,
-            supplier TEXT
+            ProductID INTEGER PRIMARY KEY,
+            ProductName TEXT,
+            Category TEXT,
+            UnitPrice REAL,
+            StockQuantity INT,
+            Supplier TEXT
         )
     """)
     
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS sale (
-            transaction_id INTEGER PRIMARY KEY,
-            sale_date DATE
-            customer_id INTEGER,
-            product_id INTEGER,
-            store_id INTEGER,
-            campaign_id INTEGER,
-            sale_amount REAL,
-            discount_coupon INTEGER,
-            payment_type TEXT
+            TransactionID INTEGER PRIMARY KEY,
+            SaleDate DATE
+            CustomerID INTEGER,
+            ProductID INTEGER,
+            StoreID INTEGER,
+            CampaignID INTEGER,
+            SaleAmount REAL,
+            DiscountCoupon INTEGER,
+            PaymentType TEXT
             FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
             FOREIGN KEY (product_id) REFERENCES product (product_id)
         )
