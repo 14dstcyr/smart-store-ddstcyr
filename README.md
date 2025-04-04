@@ -486,7 +486,7 @@ In Mac / Linux terminal
 python3 scripts/create_dw.py
 ```
 
-## Verify And Plan Ahead
+##### Verify And Plan Ahead
 
 Make sure this version runs correctly. 
 In the next session, we'll write code to create the tables. 
