@@ -38,19 +38,19 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
     """)
     
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS sale (
-            TransactionID INTEGER PRIMARY KEY,
-            SaleDate DATE
-            CustomerID INTEGER,
-            ProductID INTEGER,
-            StoreID INTEGER,
-            CampaignID INTEGER,
-            SaleAmount REAL,
-            DiscountCoupon INTEGER,
-            PaymentType TEXT
-            FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
-            FOREIGN KEY (product_id) REFERENCES product (product_id)
-        )
+    CREATE TABLE IF NOT EXISTS sale (
+        TransactionID INTEGER PRIMARY KEY,
+        SaleDate DATE,
+        CustomerID INTEGER,
+        ProductID INTEGER,
+        StoreID INTEGER,
+        CampaignID INTEGER,
+        SaleAmount REAL,
+        DiscountCoupon INTEGER,
+        PaymentType TEXT,
+        FOREIGN KEY (CustomerID) REFERENCES customer (CustomerID),
+        FOREIGN KEY (ProductID) REFERENCES product (ProductID)
+    )
     """)
 
 def delete_existing_records(cursor: sqlite3.Cursor) -> None:
