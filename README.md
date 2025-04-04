@@ -67,3 +67,428 @@ This section provides the repeatable steps for working on Python projects. These
 4. Run scripts and/or Jupyter notebooks.
 5. Make updates, verify the code still runs, and git add-commit-push to GitHub.
 ---
+### BI Python w/External Packages (.venv, execute, add-commit-push)
+# smart-sales-starter-files
+
+Starter files to initialize the smart sales project.
+
+-----
+
+## Project Setup Guide (1-Mac/Linux)
+
+Run all commands from a terminal in the root project folder. 
+
+### Step 1A - Create a Local Project Virtual Environment
+
+```shell
+python3 -m venv .venv
+```
+
+### Step 1B - Activate the Virtual Environment
+
+```shell
+source .venv/bin/activate
+```
+
+### Step 1C - Install Packages
+
+```shell
+python3 -m pip install --upgrade -r requirements.txt
+```
+
+### Step 1D - Optional: Verify .venv Setup
+
+```shell
+python3 -m datafun_venv_checker.venv_checker
+```
+
+### Step 1E - Run the initial project script
+
+```shell
+python3 scripts/data_prep.py
+```
+
+-----
+
+## Project Setup Guide (2-Windows)
+
+Run all commands from a PowerShell terminal in the root project folder.
+
+### Step 2A - Create a Local Project Virtual Environment
+
+```shell
+py -m venv .venv
+```
+
+### Step 2B - Activate the Virtual Environment
+
+```shell
+.venv\Scripts\activate
+```
+
+### Step 2C - Install Packages
+
+```shell
+py -m pip install --upgrade -r requirements.txt
+```
+
+### Step 2D - Optional: Verify .venv Setup
+
+```shell
+py -m datafun_venv_checker.venv_checker
+```
+
+### Step 2E - Run the initial project script
+
+```shell
+py scripts/data_prep.py
+```
+
+-----
+
+## Initial Package List
+
+- pip
+- loguru
+- ipykernel
+- jupyterlab
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- plotly
+- pyspark==4.0.0.dev1
+- pyspark[sql]
+- git+https://github.com/denisecase/datafun-venv-checker.git#egg=datafun_venv_checker
+---
+### Prepare Data for ETL
+##### Standardized Process Models
+Organizations will propose standard "best practices" for common tasks. 
+
+For example, for the overall process of mining information from data, there are several proposed standards such as CRISP-DMLinks to an external site., the Cross-industry standard process for data mining or SEMMA (Sample, explore, modify, model, assess from the SAS world). See https://www.starburst.io/blog/semma-vs-crisp-dm/Links to an external site.
+
+Every business intelligence project deals with data cleaning. The exact process you use may depend on your data - and your tools - all business data has its own unique challenges. Following a standard process as much as possible is typically recommended. 
+-----
+
+##### Reusable Cleaning with a DataScrubber Class
+Read about DATA_CLEANING_PROCESS_PANDAS.md in the GitHub repository at https://github.com/denisecase/smart-sales-docs/Links to an external site.
+
+The Python pandas library makes cleaning data pretty easy - and once you learn or implement logic for one project, you can often reuse something similar for another. 
+
+In data analysis, creating standardized cleaning functions ensures consistent, reliable data preparation across projects.
+
+One popular approach to creating reusable logic in code is called "object oriented programming" or OOP. We can do this by creating a special DataScrubber class which provides a reusable, modular approach to data cleaning, which saves time and reduces error risk in future analyses.
+
+We've made a good start on this DataScrubber class for you, and ask you to review the code, and finish the remaining TODO items. The TODO term is fairly common in code. You can use  CTRL f in VS Code to search for the word TODO -  or many of us install the VS Code Extension: ToDo TreeLinks to an external site. so we can see them as a list). 
+
+Create the following file for this in your project:
+
+scripts/data_scrubber.py (the module name is scripts.data_scrubber)
+
+##### Unit Test the DataScrubber Class
+To make it more engaging, we've also provided a DataScrubber test module that will test the logic in each of the DataScrubber methods (a special name for a class function).  
+
+Once the tests pass 100%, you know you've got a good start on cleaning on prep functions. 
+
+Create the following file for this in your project:
+
+tests/test_data_scrubber.py - which will import and test the DataScrubber methods
+The initial content for this file is available in the Module 3 repo: https://github.com/denisecase/smart-sales-docs/Links to an external site.
+-----
+
+##### Review and Complete the DataScrubber Class
+Open tests/test_data_scrub.py to see the unit tests for each DataScrubber method. Run these tests to verify that each method in your DataScrubber class functions as intended. Modify your code as needed in data_scrub.py until all tests pass successfully.
+
+In VS Code, with your project folder open, open a terminal window in your root project directory.
+-----
+
+###### Activate .venv
+If not already active, activate your local project virtual environment with the appropriate command for your terminal.
+In Windows PowerShell terminal: 
+.\.venv\Scripts\activate
+
+In macOS/Linux terminals:
+source .venv/bin/activate
+Verify your (.venv) is now active - it may appear in the terminal prompt.
+
+###### Verify You've Installed All Required Packages (As Needed)
+
+With the virtual environment activated, install the most current versions of the required packages which should be listed in your requirements.txt:
+
+```shell
+python -m pip install --upgrade -r requirements.txt
+```
+
+Hit the up arrow to rerun your installation command.
+-----
+###### Implement and Test General DataScrubber Class
+-----
+
+
+
+###### Run test script
+In your VS Code terminal, with your local project virtual environment **active** (and all necessary packages installed),
+run the test script with the following command. 
+
+In Windows / PowerShell:
+
+```shell
+py tests\test_data_scrubber.py
+```
+
+
+In macOS/Linux terminal:
+
+```shell
+python3 tests\test_data_scrubber.py
+```
+
+The first time you run it, all tests will not pass correctly. 
+
+------
+
+### Finish DataScrubber Until All Tests Pass Successfully
+
+Edit your scripts\data_scrubber.py file to complete the TODO actions. Verify by running the test script. 
+Once all tests pass, you are ready to use the Data Scrubber in your data_prep.py (or other data preparation script). 
+-----
+
+###### Pass All Tests
+Keep editing the DataScrubber class and running the test script until tests run successfully without error.  You do NOT need to modify the test script at all for this exercise. Later, if you add functionality to your DataScrubber class, you may want to add additional tests as well. 
+
+------
+###### Use Your Data Scrubber 
+Now that we've verified all these handy methods, you can create or update your data_prep.py script that cleans and prepares the data so it's ready for central storage (in a data warehouse or other store)..
+
+Right now, all files are cleaned in a single scripts/data_prep.py file, but you may find it better to have smaller files, maybe one per raw data table. 
+
+Given the examples and the work done previously, read, clean, and preprocess all your raw data files and save the prepared versions in the data/prepared folder. 
+
+We recommend a naming scheme - following this will make future assignments a bit easier as we will use these file names and locations, 
+however, you are welcome to vary the names. Your future scripts will need to correctly reflect your folder and file naming conventions. 
+Changing is harder and better for learning. If new, please follow our folder and file naming conventions exactly.
+
+If your file is in the scripts folder, with a name of data_prep.py, you can run it with the appropriate command from a VS Code terminal open in the root project folder:
+In Windows / PowerShell:
+
+```shell
+py scripts\data_prep.py
+```
+
+
+In macOS/Linux terminal:
+
+```shell
+python3 scripts\data_prep.py
+```
+OR:
+
+Create or Edit Your Main Data Prep script(s)
+In your main data preparation script (e.g., scripts\data-prep.py) - or scripts. There can be a LOT of work in cleaning, you might want to create and maintain one data_prep file for each of the raw tables, for example you might have either all in one:
+
+scripts/data_prep.py 
+Or several files:
+
+scripts/data_prep_cutomers.py
+scripts/data_prep_products.py
+scripts/data_prep_sales.py
+Use whatever works best for you. 
+
+This project example helps illustrate a data-cleaning process that is somewhat standardized and reusable, facilitating efficient data preparation across multiple datasets and BI projects.
+
+-----
+###### Update Notes and Git add-commit-push
+Update README.md
+
+Document every command used in your data cleaning process in the README.md file, including the scripts used and any issues encountered or resolved.
+
+Git add-commit-push
+Use Git commands to add, commit, and push your latest changes, so your work is well-documented and versioned on GitHub.
+
+Note: Smaller, more frequent commits are best - use a unique message after each step to keep very bit of incremental progress in your GitHub project repository. A useful commit history is a powerful indicator of good professional communication skills and can help us get back when things go awry. 
+
+-------
+###### Designing a Data Warehouse
+Designing a Data Warehouse involves careful planning and understanding of both the data and the business requirements. Here are the key components and considerations involved:
+
+### Schema Design
+
+In Data Warehousing, schema refers to how the database is structured, and there are two popular designs:
+
+- **Star Schema**: The simplest style of data mart schema that consists of one or more fact tables referencing any number of dimension tables, which help minimize the complexity of database design and queries.
+- **Snowflake Schema**: A more complex schema where the dimension tables are normalized, which eliminates redundancy but may require more complex queries.
+
+### Using SQLite for Schema Design
+
+Given SQLite's lightweight and flexible nature, it is an excellent tool to implement and test schema designs. 
+
+#### Example: Star Schema Design in SQLite
+
+
+**Fact Table: Sales**
+
+This table contains quantitative data for analysis, including metrics related to transactions such as `Quantity` and `SalesAmount`. It connects to dimension tables through foreign keys.
+
+**Dimension Tables: Customers, Products**
+
+Dimension Tables contain descriptive attributes related to the fact table. They provide context to the measures in the fact table.
+  
+- Customers Table: Contains information about customers, such as their `Name`, `Region`, and `JoinDate`.
+- Products Table: Contains details about products, including `ProductName`, `Category`, and `UnitPrice`.
+
+Design Considerations
+
+- Normalization vs. Denormalization: While normalized tables reduce redundancy, denormalization can improve query performance. In a data warehouse, it's common to use a denormalized approach to optimize for read operations.
+- Primary and Foreign Keys: Ensure primary keys uniquely identify each record in the dimension tables. Foreign keys in the fact table reference these primary keys, establishing relationships between tables.
+
+
+## Data Warehouse Schema
+
+In general, we will follow the convention that table names are lowercase and pluralized. 
+Column names are all lowercase with underscores. 
+
+### Fact Table: sales
+
+| column_name     | data_type | description                     |
+|-----------------|-----------|---------------------------------|
+| sale_id         | INTEGER   | Primary key                     |
+| date            | DATE      | Date of the transaction         |
+| customer_id     | TEXT      | Foreign key to customers        |
+| product_id      | TEXT      | Foreign key to products         |
+| quantity        | INTEGER   | Quantity of items sold          |
+| sales_amount    | REAL      | Total sales amount              |
+
+### Dimension Table: customers
+
+| column_name | data_type | description                       |
+|-------------|-----------|-----------------------------------|
+| customer_id | TEXT      | Primary key                       |
+| name        | TEXT      | Name of the customer              |
+| region      | TEXT      | Region where customer resides     |
+| join_date   | DATE      | Date when the customer joined     |
+
+### Dimension Table: products
+
+| column_name  | data_type | description                      |
+|--------------|-----------|----------------------------------|
+| product_id   | TEXT      | Primary key                      |
+| product_name | TEXT      | Name of the product              |
+| category     | TEXT      | Category of the product          |
+| unit_price   | REAL      | Price per unit of the product    |
+
+A well-designed data warehouse is instrumental in enabling efficient data analysis and business intelligence reporting. 
+We can use SQLite to simulate a data warehouse and gain practical experience in schema design and data management.
+
+Next, we'll implement the data warehouse. 
+----
+# Create an Initial Data Warehouse Creation Script
+
+Goal: Use SQLite to define and create tables for your data warehouse. The script will set up the database schema based on your design.
+
+In this step, we'll sketch out a new script but leave the details until later. 
+This is a common way to develop code. First, get the basics running, and then complete the details. 
+
+## Open Project in VS Code, Create a New Script
+
+Open your project in VS Code. Create a file in your scripts folder named create_dw.py. 
+
+Start with some initial code. Maybe something like the following. 
+
+```python
+import sqlite3
+import sys
+import pathlib
+
+# For local imports, temporarily add project root to Python sys.path
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
+# Now we can import local modules
+from utils.logger import logger  # noqa: E402
+
+# Constants
+DW_DIR: pathlib.Path = pathlib.Path("data").joinpath("dw")
+DB_PATH: pathlib.Path = DW_DIR.joinpath("smart_sales.db")
+
+# Ensure the 'data/dw' directory exists
+DW_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def create_dw() -> None:
+    """Create the data warehouse by creating customer, product, and sale tables."""
+    try:
+        # Connect to the SQLite database
+        conn = sqlite3.connect(DB_PATH)
+
+        # Will need more magic here....
+
+        # Close the connection
+        conn.close()
+        logger.info("Data warehouse created successfully.")
+
+    except sqlite3.Error as e:
+        logger.error(f"Error connecting to the database: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+    finally:
+        if conn:
+            conn.close()
+
+def main() -> None:
+    """Main function to create the data warehouse."""
+    logger.info("Starting data warehouse creation...")
+    create_dw()
+    logger.info("Data warehouse creation complete.")
+
+if __name__ == "__main__":
+    main()
+
+```
+
+In the Python script, use the sqlite3 library in the Python Standard Library to connect to SQLite and execute SQL commands to create tables.
+
+- Define the schema for your fact and dimension tables.
+- Ensure that your fact table includes foreign keys that reference the primary keys of your dimension tables.
+- Follow conventions for naming tables and columns.
+
+## Activate .venv and Excecute the Script
+
+In VS Code, open a terminal. 
+Activate the local project virtual environment if not already active. 
+Use the variation of this command that works on your machine. 
+
+In Windows / PowerShell (for example)
+
+```shell
+.\.venv\Scripts\activate
+```
+
+In Mac / Linux terminal (for example)
+
+```shell
+source .venv/bin/activate
+```
+
+## Execute the Script
+
+Execute the script to create the database and tables - use the command that works for your operating system. 
+
+In Windows / PowerShell
+
+```shell
+py scripts/create_dw.py
+```
+
+In Mac / Linux terminal
+
+```shell
+python3 scripts/create_dw.py
+```
+
+## Verify And Plan Ahead
+
+Make sure this version runs correctly. 
+In the next session, we'll write code to create the tables. 
+We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
+------ 
