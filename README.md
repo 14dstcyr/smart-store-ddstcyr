@@ -495,12 +495,13 @@ We will NOT populate them. We'll do that separately using our prepared data in M
 #### Scenario
 Now that we have designed and populated our data warehouse (P4), we will analyze and visualize the stored data to generate business intelligence insights.
 
-### Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. 
+#### Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. 
 
 #### Windows users will work with Power BI Desktop.
-Mac/Linux users will implement the same concepts using Spark SQL and Python.
-We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
+#### Mac/Linux users will implement the same concepts using Spark SQL and Python.
+#### We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
 ---
+
 ### Objectives
 * Connect to an SQLite database for analysis
 * Write and execute SQL queries for reporting
@@ -628,10 +629,10 @@ To explore sales over time, we’ll use a column or line chart and enable drilld
 6.  Click on a bar or line point in the chart to drill from Year → Quarter → Month.
 7.  To move back up, click the up arrow near the same spot.
 
-If nothing happens when clicking, make sure the chart supports hierarchy and the drilldown mode is active (look for the split arrow).
+##### If nothing happens when clicking, make sure the chart supports hierarchy and the drilldown mode is active (look for the split arrow).
 ---
 
-### Task 5: Create Interactive Visualizations (60 min)
+### Task 5: Create Interactive Visualizations 
 We will now visualize the results in both Power BI and Python (Seaborn/Matplotlib).
 
 #### Windows (Power BI) - Charts
@@ -646,7 +647,7 @@ Go to Report View.
 3.  Use Slicers to filter by category or region if you’ve added those earlier.
 
 ---
-### Task 6: Document & Submit Your Work (30 min)
+### Task 6: Document & Submit Your Work 
 Update README.md
 
 1.  Describe your SQL queries and reports.
