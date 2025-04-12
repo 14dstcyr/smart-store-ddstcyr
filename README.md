@@ -491,3 +491,188 @@ Make sure this version runs correctly.
 In the next session, we'll write code to create the tables. 
 We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
 ------ 
+### Cross Platform Reporting with Power BI & Spark
+#### Scenario
+Now that we have designed and populated our data warehouse (P4), we will analyze and visualize the stored data to generate business intelligence insights.
+
+Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system.
+
+Windows users will work with Power BI Desktop.
+Mac/Linux users will implement the same concepts using Spark SQL and Python.
+We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
+---
+#### Objectives
+* Connect to an SQLite database for analysis
+* Write and execute SQL queries for reporting
+* Implement slicing, dicing, and drilldowns
+* Create interactive visualizations
+* Explore scalability & cloud-based solutions
+---
+#### Implementation By Operating System
+Choose the implementation based on your operating system.
+
+Step	Power BI (Windows Users)	Spark SQL (Mac/Linux Users)
+![alt text](image-1.png)
+---
+#### Task 1: Set Up Your BI Environment
+##### Windows (Power BI) -  Initial Setup
+We’ll use Power BI Desktop and an ODBC connection to read data from our SQLite database. There are 3 key tasks:
+
+1.  Install Power BI Desktop (if you haven't yet) from: https://powerbi.microsoft.com/downloadsLinks to an     external site.
+2.  Install SQLite ODBC Driver  from: https://www.ch-werner.de/sqliteodbcLinks to an external site.
+3.  Configure ODBC Data Source Name (DSN)
+   
+See this video (or work with your AI) How to Connect Power BI with SQLite Database and Import Data - 6 minute video
+https://www.youtube.com/watch?v=v9OG5Ry5zDULinks to an external site.
+https://www.youtube.com/watch?v=v9OG5Ry5zDU
+
+More help on Task 3 (after installing the ODBC driver):
+
+1.  Open ODBC Data Sources (64-bit) from the Start Menu.
+2.  Click the System DSN tab.
+3.  Click Add... → choose SQLite3 ODBC Driver (or whatever data store you are using) → click Finish.
+4.  Name it SmartSalesDSN (or any name you prefer).
+5.  Click Browse and select your database file: e.g., smart_sales.db (or whatever you named it). 
+6.  Click OK to save.
+
+---
+
+#### Task 2: Connect to Your Data Warehouse 
+Now, we need to establish a connection between our BI tool and our SQLite data warehouse (e.g., smart_sales.db).
+
+#### Windows (Power BI) - Load Tables
+1.  Open Power BI Desktop.
+2.  Click Get Data (top left) → Select ODBC from the list.
+3.  Choose the DSN you created in Task 1 (e.g., SmartSalesDSN).
+4.  Click OK. Wait a moment. Power BI will show a list of available tables.
+5.  Select the tables you want to analyze - for most of us: 
+    1.  Customer table
+    2.  Product table
+    3.  Sales table
+6.  Click Load to bring the tables into Power BI.
+7.  Switch to Model view (left panel) to see how the tables are connected.
+
+---
+
+#### Task 3: Query & Aggregate Data 
+We will query the data warehouse and extract key insights.
+
+#### Windows (Power BI) - SQL Query Editor
+We’ll use Power BI’s Advanced Editor to write a custom SQL query.
+
+1.  Open Power BI Desktop.
+2.  In the Home tab, click Transform Data to open Power Query Editor.
+3.  In Power Query, click Advanced Editor (top menu).
+4.  Delete any code in the editor and replace it with your SQL query (example below). You must use your table names and column names for the SQL to work. 
+
+SELECT c.name, SUM(s.amount) AS total_spent
+FROM sale s
+JOIN customer c ON s.customer_id = c.customer_id
+GROUP BY c.name
+ORDER BY total_spent DESC;
+
+1.  Click Done.
+2.  Rename the new query (on the left) to something like Top Customers or whatever you are focusing on.
+3.  Click Close & Apply (upper left) to return to the report view.
+4.  You can now use this table in visuals (e.g., bar chart).
+
+---
+
+#### Task 4: Slice, Dice, and Drilldown
+We will implement slicing, dicing, and drilldown techniques to analyze sales.
+
+#### Windows (Power BI) - Slice, Dice, and Drilldown
+1.  Slicing: Add a date range slicer
+2.  Dicing: Create a matrix visual for sales by product & region
+3.  Drilldown: Enable drill-through to explore sales by year → quarter → month
+---
+##### Task 1: Slicing in Power BI (by Date)
+
+Since SQLite doesn’t have real "Date" fields, we’ll use Power BI's Transform Data to extract parts of the date for slicing, dicing, and drilldown.
+
+1.  Click Transform Data to open Power Query.
+2.  Select the sales table.
+3.  Select the order_date column (or any "date" field).
+4.  On the top menu, click Add Column → Date → Year.
+5.  Then click Add Column → Date → Quarter.
+6.  Then click Add Column → Date → Month → Name of Month.
+7.  Click Close & Apply to save changes and return to the report view.
+8.  In Power BI, go to the Report view (center icon on the left).
+9.  From the Visualizations pane, click on the Slicer icon.
+10. Drag a date field into the slicer.
+11. If it doesn’t show a range, click the dropdown (upper-right corner of slicer) and select Between to enable a date range slider.
+---
+#### Task 2: Dicing in Power BI (by Product Attributes)
+
+To explore sales by product attributes (e.g. category and region or other characteristics), we’ll create a Matrix visual in Power BI.
+
+1.  Go to the Report view.
+2.  From the Visualizations pane, click the Matrix visual.
+3.  Drag your first product feature (e.g. category) to the Rows field well.
+4.  Drag your first product feature (e.g. region) to the Columns field well.
+5.  Drag a numeric field to the Values field well.
+6.  Optional: Format the numeric values by clicking the column dropdown in the Values area.
+This matrix will help us “dice” the data and break it down by two categorical dimensions: product and region.
+---
+#### Task 3: Drilldown in Power BI (Year → Quarter → Month)
+
+To explore sales over time, we’ll use a column or line chart and enable drilldown so we can click into sales by year, quarter, and month.
+
+1.  Go to the Report view.
+2.  From the Visualizations pane, click on either the Clustered Column Chart or Line Chart.
+3.  Drag your Year, Quarter, and Month fields (created earlier from order_date) into the X-Axis or Axis field in that order:
+        1.  First: order_year
+        2.  Then: order_quarter
+        3.  Then: order_month
+4.  Drag your numeric value (e.g., total amount) into the Values area.
+5.  At the top left of the chart, click the drilldown arrow icon (a split-down arrow).
+6.  Click on a bar or line point in the chart to drill from Year → Quarter → Month.
+7.  To move back up, click the up arrow near the same spot.
+
+If nothing happens when clicking, make sure the chart supports hierarchy and the drilldown mode is active (look for the split arrow).
+---
+
+### Task 5: Create Interactive Visualizations (60 min)
+We will now visualize the results in both Power BI and Python (Seaborn/Matplotlib).
+
+#### Windows (Power BI) - Charts
+1.  Create a bar chart for Top Customers
+2.  Create a line chart for Sales Trends
+3.  Add a slicer for product categories
+4.  To create your visuals:
+
+Go to Report View.
+1.  Use the Visualizations pane to choose a chart (e.g., Bar, Line).
+2.  Drag the appropriate field into the chart (e.g., customer name to Axis, total spent to Values).
+3.  Use Slicers to filter by category or region if you’ve added those earlier.
+
+---
+### Task 6: Document & Submit Your Work (30 min)
+Update README.md
+
+1.  Describe your SQL queries and reports.
+2.  Explain dashboard design choices.
+3.  Include screenshot of: Power BI Model View / Spark SQL Schema
+4.  Include screenshot of: Query results
+5.  Include screenshot of: Final Dashboard / Charts
+
+
+
+Screenshot of Power BI Model View 
+![alt text](image-2.png)
+
+Screenshot of Query results
+![alt text](image-3.png)
+
+
+Screenshot of Final Power BI Dashboard and Charts
+![alt text](image-1.png)
+
+Git Add-Commit-Push - do this at the end, but it's also good to do after each improvement. Practice is key - and it's a powerful professional practice. Small, frequent git commits are best. 
+
+git add .
+git commit -m "Completed analysis and visualization"
+git push -u origin main
+
+---
+
