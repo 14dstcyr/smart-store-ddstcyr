@@ -41,13 +41,13 @@ Sales Project Instructions
 
    Then, specify the required version when creating the virtual environment. For example:
    ##### On Windows, Use PowerShell (not cmd)
-   py -3.11 -m venv .venv
+      py -3.11 -m venv .venv
 
 ### Be sure to git push the new information to your repository in GitHub
 
 ### 
 ---
-##### 02-Project-Initialization
+#### 02-Project-Initialization
 This section walks you through the steps to starting a new project [02-Project-Initialization] (./02-project-initialization/PROJECT-INITIALIZATION.md):
 
 1. Copy an existing project OR start a new project from scratch.
@@ -56,8 +56,8 @@ This section walks you through the steps to starting a new project [02-Project-I
 4. Git add-commit-push the changes to GitHub.
 5. Create a local project virtual environment for Python.
    
-##### 03-Repeatable-Workflow
-Go to [03-Repeatable-Workflow] (./03-repeatable-workflow/REPEATABLE-WORKFLOW.md) for ongoing project development.
+#### 03-Repeatable-Workflow
+-Go to [03-Repeatable-Workflow] (./03-repeatable-workflow/REPEATABLE-WORKFLOW.md) for ongoing project development.
 ---
 This section provides the repeatable steps for working on Python projects. These steps are typically followed whenever we make changes to a project. The workflow includes:
 
@@ -68,7 +68,7 @@ This section provides the repeatable steps for working on Python projects. These
 5. Make updates, verify the code still runs, and git add-commit-push to GitHub.
 ---
 ### BI Python w/External Packages (.venv, execute, add-commit-push)
-# smart-sales-starter-files
+## smart-sales-starter-files
 
 Starter files to initialize the smart sales project.
 
@@ -166,11 +166,11 @@ py scripts/data_prep.py
 Organizations will propose standard "best practices" for common tasks. 
 
 For example, for the overall process of mining information from data, there are several proposed standards such as CRISP-DMLinks to an external site., the Cross-industry standard process for data mining or SEMMA (Sample, explore, modify, model, assess from the SAS world). See https://www.starburst.io/blog/semma-vs-crisp-dm/Links to an external site.
-
+--
 Every business intelligence project deals with data cleaning. The exact process you use may depend on your data - and your tools - all business data has its own unique challenges. Following a standard process as much as possible is typically recommended. 
 -----
 
-##### Reusable Cleaning with a DataScrubber Class
+#### Reusable Cleaning with a DataScrubber Class
 Read about DATA_CLEANING_PROCESS_PANDAS.md in the GitHub repository at https://github.com/denisecase/smart-sales-docs/Links to an external site.
 
 The Python pandas library makes cleaning data pretty easy - and once you learn or implement logic for one project, you can often reuse something similar for another. 
@@ -185,24 +185,24 @@ Create the following file for this in your project:
 
 scripts/data_scrubber.py (the module name is scripts.data_scrubber)
 
-##### Unit Test the DataScrubber Class
+#### Unit Test the DataScrubber Class
 To make it more engaging, we've also provided a DataScrubber test module that will test the logic in each of the DataScrubber methods (a special name for a class function).  
 
 Once the tests pass 100%, you know you've got a good start on cleaning on prep functions. 
 
 Create the following file for this in your project:
 
-tests/test_data_scrubber.py - which will import and test the DataScrubber methods
+-tests/test_data_scrubber.py - which will import and test the DataScrubber methods
 The initial content for this file is available in the Module 3 repo: https://github.com/denisecase/smart-sales-docs/Links to an external site.
 -----
 
-##### Review and Complete the DataScrubber Class
+#### Review and Complete the DataScrubber Class
 Open tests/test_data_scrub.py to see the unit tests for each DataScrubber method. Run these tests to verify that each method in your DataScrubber class functions as intended. Modify your code as needed in data_scrub.py until all tests pass successfully.
 
-In VS Code, with your project folder open, open a terminal window in your root project directory.
+-In VS Code, with your project folder open, open a terminal window in your root project directory.
 -----
 
-###### Activate .venv
+#### Activate .venv
 If not already active, activate your local project virtual environment with the appropriate command for your terminal.
 In Windows PowerShell terminal: 
 .\.venv\Scripts\activate
@@ -211,7 +211,7 @@ In macOS/Linux terminals:
 source .venv/bin/activate
 Verify your (.venv) is now active - it may appear in the terminal prompt.
 
-###### Verify You've Installed All Required Packages (As Needed)
+#### Verify You've Installed All Required Packages (As Needed)
 
 With the virtual environment activated, install the most current versions of the required packages which should be listed in your requirements.txt:
 
@@ -221,12 +221,12 @@ python -m pip install --upgrade -r requirements.txt
 
 Hit the up arrow to rerun your installation command.
 -----
-###### Implement and Test General DataScrubber Class
+#### Implement and Test General DataScrubber Class
 -----
 
 
 
-###### Run test script
+#### Run test script
 In your VS Code terminal, with your local project virtual environment **active** (and all necessary packages installed),
 run the test script with the following command. 
 
@@ -248,16 +248,15 @@ The first time you run it, all tests will not pass correctly.
 ------
 
 ### Finish DataScrubber Until All Tests Pass Successfully
-
 Edit your scripts\data_scrubber.py file to complete the TODO actions. Verify by running the test script. 
 Once all tests pass, you are ready to use the Data Scrubber in your data_prep.py (or other data preparation script). 
 -----
 
-###### Pass All Tests
+#### Pass All Tests
 Keep editing the DataScrubber class and running the test script until tests run successfully without error.  You do NOT need to modify the test script at all for this exercise. Later, if you add functionality to your DataScrubber class, you may want to add additional tests as well. 
 
 ------
-###### Use Your Data Scrubber 
+#### Use Your Data Scrubber 
 Now that we've verified all these handy methods, you can create or update your data_prep.py script that cleans and prepares the data so it's ready for central storage (in a data warehouse or other store)..
 
 Right now, all files are cleaned in a single scripts/data_prep.py file, but you may find it better to have smaller files, maybe one per raw data table. 
@@ -286,18 +285,18 @@ OR:
 Create or Edit Your Main Data Prep script(s)
 In your main data preparation script (e.g., scripts\data-prep.py) - or scripts. There can be a LOT of work in cleaning, you might want to create and maintain one data_prep file for each of the raw tables, for example you might have either all in one:
 
-scripts/data_prep.py 
+  scripts/data_prep.py 
 Or several files:
 
-scripts/data_prep_cutomers.py
-scripts/data_prep_products.py
-scripts/data_prep_sales.py
+  scripts/data_prep_customers.py
+  scripts/data_prep_products.py
+  scripts/data_prep_sales.py
 Use whatever works best for you. 
 
 This project example helps illustrate a data-cleaning process that is somewhat standardized and reusable, facilitating efficient data preparation across multiple datasets and BI projects.
 
------
-###### Update Notes and Git add-commit-push
+----
+#### Update Notes and Git add-commit-push
 Update README.md
 
 Document every command used in your data cleaning process in the README.md file, including the scripts used and any issues encountered or resolved.
@@ -308,7 +307,7 @@ Use Git commands to add, commit, and push your latest changes, so your work is w
 Note: Smaller, more frequent commits are best - use a unique message after each step to keep very bit of incremental progress in your GitHub project repository. A useful commit history is a powerful indicator of good professional communication skills and can help us get back when things go awry. 
 
 -------
-###### Designing a Data Warehouse
+#### Designing a Data Warehouse
 Designing a Data Warehouse involves careful planning and understanding of both the data and the business requirements. Here are the key components and considerations involved:
 
 ### Schema Design
@@ -379,7 +378,7 @@ Column names are all lowercase with underscores.
 A well-designed data warehouse is instrumental in enabling efficient data analysis and business intelligence reporting. 
 We can use SQLite to simulate a data warehouse and gain practical experience in schema design and data management.
 
-Next, we'll implement the data warehouse. 
+-Next, we'll implement the data warehouse. 
 ----
 # Create an Initial Data Warehouse Creation Script
 
@@ -452,7 +451,7 @@ In the Python script, use the sqlite3 library in the Python Standard Library to 
 - Ensure that your fact table includes foreign keys that reference the primary keys of your dimension tables.
 - Follow conventions for naming tables and columns.
 
-## Activate .venv and Excecute the Script
+## Activate .venv and Execute the Script
 
 In VS Code, open a terminal. 
 Activate the local project virtual environment if not already active. 
@@ -486,8 +485,8 @@ In Mac / Linux terminal
 python3 scripts/create_dw.py
 ```
 
-### Verify And Plan Ahead
--Make sure this version runs correctly. 
+### Verify And Plan Ahead 
+Make sure this version runs correctly. 
 In the next session, we'll write code to create the tables. 
 We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
 ------ 
@@ -495,11 +494,11 @@ We will NOT populate them. We'll do that separately using our prepared data in M
 #### Scenario
 Now that we have designed and populated our data warehouse (P4), we will analyze and visualize the stored data to generate business intelligence insights.
 
-#### Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. 
+*Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. 
 
-#### Windows users will work with Power BI Desktop.
-#### Mac/Linux users will implement the same concepts using Spark SQL and Python.
-#### We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
+*Windows users will work with Power BI Desktop.
+*Mac/Linux users will implement the same concepts using Spark SQL and Python.
+*We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
 ---
 
 ### Objectives
