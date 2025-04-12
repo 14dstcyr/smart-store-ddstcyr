@@ -656,6 +656,7 @@ Update README.md
 5.  Include screenshot of: Final Dashboard / Charts
 
 ### Power BI Dashboard choices
+
 *I followed the task 3 instructions to get the query to work in Power BI.
 *I created a star schema to connect the productID from the product table to the sale table. I also connected the CustomerID from the Top Customers table to the sale table, as well to the customer table. 
  
@@ -664,17 +665,19 @@ Update README.md
 2.  I then created a line chart to show the annual review for the year including quarter and month, along with quarter and month. If you scroll over the line chart it will show the quarter, month, year and the sale amount.
 3.  I added two different slicers to show the customer total sale amount, and one for product showing the region.
 4.  I added a bar chart to show sale by category.
+---
 
-Screenshot of Power BI Model View 
+### Screenshot of Power BI Model View 
 ![alt text](image-2.png)
 
-Screenshot of Query results
+### Screenshot of Query results
 ![alt text](image-3.png)
 
 
-Screenshot of Final Power BI Dashboard and Charts
+### Screenshot of Final Power BI Dashboard and Charts
 ![alt text](image-1.png)
 
+---
 Git Add-Commit-Push - do this at the end, but it's also good to do after each improvement. Practice is key - and it's a powerful professional practice. Small, frequent git commits are best. 
 
 git add .
