@@ -496,9 +496,9 @@ Now that we have designed and populated our data warehouse (P4), we will analyze
 
 *Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. 
 
-*Windows users will work with Power BI Desktop.
-*Mac/Linux users will implement the same concepts using Spark SQL and Python.
-*We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
+ *Windows users will work with Power BI Desktop.
+ *Mac/Linux users will implement the same concepts using Spark SQL and Python. 
+ *We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
 ---
 
 ### Objectives
@@ -513,8 +513,8 @@ Choose the implementation based on your operating system.
 
 ![alt text](image-4.png)
 ---
-#### Task 1: Set Up Your BI Environment
-##### Windows (Power BI) -  Initial Setup
+### Task 1: Set Up Your BI Environment
+#### Windows (Power BI) -  Initial Setup
 We’ll use Power BI Desktop and an ODBC connection to read data from our SQLite database. There are 3 key tasks:
 
 1.  Install Power BI Desktop (if you haven't yet) from: https://powerbi.microsoft.com/downloadsLinks to an     external site.
@@ -536,10 +536,10 @@ More help on Task 3 (after installing the ODBC driver):
 
 ---
 
-#### Task 2: Connect to Your Data Warehouse 
+### Task 2: Connect to Your Data Warehouse 
 Now, we need to establish a connection between our BI tool and our SQLite data warehouse (e.g., smart_sales.db).
 
-#### Windows (Power BI) - Load Tables
+### Windows (Power BI) - Load Tables
 1.  Open Power BI Desktop.
 2.  Click Get Data (top left) → Select ODBC from the list.
 3.  Choose the DSN you created in Task 1 (e.g., SmartSalesDSN).
@@ -553,7 +553,7 @@ Now, we need to establish a connection between our BI tool and our SQLite data w
 
 ---
 
-#### Task 3: Query & Aggregate Data 
+### Task 3: Query & Aggregate Data 
 We will query the data warehouse and extract key insights.
 
 #### Windows (Power BI) - SQL Query Editor
@@ -564,11 +564,11 @@ We’ll use Power BI’s Advanced Editor to write a custom SQL query.
 3.  In Power Query, click Advanced Editor (top menu).
 4.  Delete any code in the editor and replace it with your SQL query (example below). You must use your table names and column names for the SQL to work. 
 
-SELECT c.name, SUM(s.amount) AS total_spent
-FROM sale s
-JOIN customer c ON s.customer_id = c.customer_id
-GROUP BY c.name
-ORDER BY total_spent DESC;
+    SELECT c.name, SUM(s.amount) AS total_spent
+    FROM sale s
+    JOIN customer c ON s.customer_id = c.customer_id
+    GROUP BY c.name
+    ORDER BY total_spent DESC;
 
 1.  Click Done.
 2.  Rename the new query (on the left) to something like Top Customers or whatever you are focusing on.
@@ -577,7 +577,7 @@ ORDER BY total_spent DESC;
 
 ---
 
-#### Task 4: Slice, Dice, and Drilldown
+### Task 4: Slice, Dice, and Drilldown
 We will implement slicing, dicing, and drilldown techniques to analyze sales.
 
 #### Windows (Power BI) - Slice, Dice, and Drilldown
@@ -585,7 +585,7 @@ We will implement slicing, dicing, and drilldown techniques to analyze sales.
 2.  Dicing: Create a matrix visual for sales by product & region
 3.  Drilldown: Enable drill-through to explore sales by year → quarter → month
 ---
-##### Task 1: Slicing in Power BI (by Date)
+#### Task 1: Slicing in Power BI (by Date)
 
 Since SQLite doesn’t have real "Date" fields, we’ll use Power BI's Transform Data to extract parts of the date for slicing, dicing, and drilldown.
 
@@ -649,13 +649,21 @@ Go to Report View.
 ### Task 6: Document & Submit Your Work 
 Update README.md
 
-1.  Describe your SQL queries and reports.
+1.  Describe your SQL queries and reports. 
 2.  Explain dashboard design choices.
 3.  Include screenshot of: Power BI Model View / Spark SQL Schema
 4.  Include screenshot of: Query results
 5.  Include screenshot of: Final Dashboard / Charts
 
+### Power BI Dashboard choices
+*I followed the task 3 instructions to get the query to work in Power BI.
+*I created a star schema to connect the productID from the product table to the sale table. I also connected the CustomerID from the Top Customers table to the sale table, as well to the customer table. 
+ 
 
+1.  I created a logo and placed that on the top left of board. I created three KPI cards to go across the top of the banner on board to show total revenue, cost and average order amount. I chose green and blue as the color palette. This board is interactive and will change as buttons are selected.
+2.  I then created a line chart to show the annual review for the year including quarter and month, along with quarter and month. If you scroll over the line chart it will show the quarter, month, year and the sale amount.
+3.  I added two different slicers to show the customer total sale amount, and one for product showing the region.
+4.  I added a bar chart to show sale by category.
 
 Screenshot of Power BI Model View 
 ![alt text](image-2.png)
