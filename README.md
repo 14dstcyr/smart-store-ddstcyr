@@ -487,9 +487,10 @@ python3 scripts/create_dw.py
 ```
 
 ### Verify And Plan Ahead
-   Make sure this version runs correctly. 
-   In the next session, we'll write code to create the tables. 
-   We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
+
+Make sure this version runs correctly. 
+In the next session, we'll write code to create the tables. 
+We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
 ------ 
 ### Cross Platform Reporting with Power BI & Spark
 #### Scenario
