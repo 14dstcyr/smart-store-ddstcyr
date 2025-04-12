@@ -486,9 +486,8 @@ In Mac / Linux terminal
 python3 scripts/create_dw.py
 ```
 
-### Verify And Plan Ahead
-
-Make sure this version runs correctly. 
+#### Verify And Plan Ahead
+-Make sure this version runs correctly. 
 In the next session, we'll write code to create the tables. 
 We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
 ------ 
@@ -498,11 +497,11 @@ Now that we have designed and populated our data warehouse (P4), we will analyze
 
 Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system.
 
-Windows users will work with Power BI Desktop.
+-Windows users will work with Power BI Desktop.
 Mac/Linux users will implement the same concepts using Spark SQL and Python.
 We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
 ---
-#### Objectives
+### Objectives
 * Connect to an SQLite database for analysis
 * Write and execute SQL queries for reporting
 * Implement slicing, dicing, and drilldowns
