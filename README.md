@@ -486,7 +486,7 @@ In Mac / Linux terminal
 python3 scripts/create_dw.py
 ```
 
-#### Verify And Plan Ahead
+### Verify And Plan Ahead
 -Make sure this version runs correctly. 
 In the next session, we'll write code to create the tables. 
 We will NOT populate them. We'll do that separately using our prepared data in Module 5. 
@@ -495,9 +495,7 @@ We will NOT populate them. We'll do that separately using our prepared data in M
 #### Scenario
 Now that we have designed and populated our data warehouse (P4), we will analyze and visualize the stored data to generate business intelligence insights.
 
-Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system.
-
--Windows users will work with Power BI Desktop.
+Reporting tools allow us to turn raw data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system. Windows users will work with Power BI Desktop.
 Mac/Linux users will implement the same concepts using Spark SQL and Python.
 We will apply core BI techniques (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
 ---
@@ -511,8 +509,7 @@ We will apply core BI techniques (slicing, dicing, and drilldown) and generate i
 #### Implementation By Operating System
 Choose the implementation based on your operating system.
 
-Step	Power BI (Windows Users)	Spark SQL (Mac/Linux Users)
-![alt text](image-1.png)
+![alt text](image-4.png)
 ---
 #### Task 1: Set Up Your BI Environment
 ##### Windows (Power BI) -  Initial Setup
