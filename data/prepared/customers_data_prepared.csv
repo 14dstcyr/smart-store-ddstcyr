@@ -9,13 +9,28 @@ CustomerID,Name,Region,JoinDate,RewardPoints,ContactMethod
 1008,Tony Stark,North,5/1/2020,418,text
 1009,Jason Bourne,West,12/1/2020,218,email
 1010,Hermione Granger,East,12/9/2022,293,text
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+1011,Bugs Bunny,West,5/15/2000,272,phone
+1012,Captain Jack,South,1/12/2007,68,text
+1013,Stephen King,South,3/7/2021,158,text
+1014,Anne Rice,East,9/15/2009,357,text
+1015,Count Dracula,West,7/2/2001,194,email
+1016,Dorothy Gale,South,6/8/2008,28,email
+1017,Luke Skywalker,North,10/12/2019,267,phone
+1018,Mary Shelly,West,2/15/2022,149,text
+1019,Amanda Geller,South,12/4/2007,347,text
+1020,Timothy Knight,North,10/8/2021,249,email
+1021,Janet Jackson,West,5/4/2011,184,phone
+1022,Kermit Frog,East,1/28/2008,412,email
+1023,John Lennon,East,2/15/2021,328,text
+1024,J.K. Rowling,North,6/10/2004,381,phone
+1025,Henry Bowler,South,3/17/2006,241,text
+1026,Jack Beans,West,4/11/2011,410,text
+1027,Jake Miles,North,5/19/2001,217,phone
+1028,Kelly Arner,East,1/10/2021,431,email
+1029,Eric Dahmer,North,2/13/2007,283,text
+1030,Pee Wee Herman,West,6/10/2007,382,text
+1031,Princess Bride,East,5/10/2021,237,phone
+1032,Prince Charming,East,6/10/2005,18,text
+1033,Dragon King,West,7/11/2005,1,phone
+1034,Grogu Yoda,South,5/14/2022,18,email
+1035,Connor Younger,North,1/25/2021,125,email
