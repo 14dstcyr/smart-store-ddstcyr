@@ -686,3 +686,14 @@ git push -u origin main
 
 ---
 
+# smart-sales-olap
+
+This project illustrates creating a multidemensional data store from which we can query to illustrate the concept of dimensions and metrics. 
+
+Cubing concepts (such as slicing, dicing, and drilldowns) are still widely used, although pre-computation of cubes may not be required anymore. Snowflake, Power Bi, Tableau and more can compute as needed using the most up-to-date information sources. 
+---
+## IMPORTANT: Align OLAP Scripts with Your DW Schema
+
+Ensure that the OLAP scripts you run are compatible with the schema of your data warehouse. This example assumes a specific schema (detailed below).
+
+## Data Warehouse Schema and Example Data
