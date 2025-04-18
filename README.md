@@ -690,7 +690,7 @@ git push -u origin main
 
 This project illustrates creating a multidemensional data store from which we can query to illustrate the concept of dimensions and metrics. 
 
-Cubing concepts (such as slicing, dicing, and drilldowns) are still widely used, although pre-computation of cubes may not be required anymore. Snowflake, Power Bi, Tableau and more can compute as needed using the most up-to-date information sources. 
+    Cubing concepts (such as slicing, dicing, and drilldowns) are still widely used, although pre-computation of cubes may not be required anymore. Snowflake, Power Bi, Tableau and more can compute as needed using the most up-to-date information sources. 
 ---
 ## IMPORTANT: Align OLAP Scripts with Your DW Schema
 
@@ -704,36 +704,36 @@ Business Question:Which product categories and customer segments are driving the
 
 Why It Matters:Understanding how sales vary by region, product category, and customer spending allows the business to:
 
--Identify high-performing areas for strategic investment
+- Identify high-performing areas for strategic investment
 
--Adjust marketing strategies toward top-selling products
+- Adjust marketing strategies toward top-selling products
 
--Strengthen relationships with high-value customers
+- Strengthen relationships with high-value customers
 
--Allocate inventory more efficiently
+- Allocate inventory more efficiently
 ---
 
 ### Section 2. Data Source
 
 Initial Dataset:A prepared data warehouse was used with fact and dimension tables:
 
--sales_data_prepared (fact table)
+- sales_data_prepared (fact table)
 
--products_data_prepared (dimension)
+- products_data_prepared (dimension)
 
--customers_data_prepared (dimension)
+- customers_data_prepared (dimension)
 
--top_customers (aggregated summary)
+- top_customers (aggregated summary)
 
 #### Columns Used:
 
--From sales_data_prepared: SaleAmount, SaleDate, SaleYear, SaleQuarter, ProductID, CustomerID, Region
+- From sales_data_prepared: SaleAmount, SaleDate, SaleYear, SaleQuarter, ProductID, CustomerID, Region
 
--From products_data_prepared: ProductID, Category, ProductName
+- From products_data_prepared: ProductID, Category, ProductName
 
--From customers_data_prepared: CustomerID, Name, Region, RewardPoints
+- From customers_data_prepared: CustomerID, Name, Region, RewardPoints
 
--From top_customers: CustomerID, total_spent
+- From top_customers: CustomerID, total_spent
 ---
 ### Section 3. Tools
 
@@ -741,49 +741,49 @@ Tool Used: Power BI
 
 Why Power BI?
 
--User-friendly interface for OLAP-style slicing and dicing
+- User-friendly interface for OLAP-style slicing and dicing
 
--Strong support for calculated measures (DAX)
+- Strong support for calculated measures (DAX)
 
--Rich visuals including KPI cards, bar/line charts, and matrix tables
+- Rich visuals including KPI cards, bar/line charts, and matrix tables
 
--Easy to model relationships in a star schema
+- Easy to model relationships in a star schema
 
--Interactive slicers for region, product category, and time
+- Interactive slicers for region, product category, and time
 ---
 ### Section 4. Workflow & Logic
 
 #### Dimensions Used:
 
--Product Category
+- Product Category
 
--Region
+- Region
 
--Time (Year & Quarter)
+- Time (Year & Quarter)
 
--Customer Segment (top customers)
+- Customer Segment (top customers)
 
 #### Aggregations:
 
--Total Sales = SUM(SaleAmount)
+- Total Sales = SUM(SaleAmount)
 
--Average Sale = AVERAGE(SaleAmount)
+- Average Sale = AVERAGE(SaleAmount)
 
--Total Transactions = COUNT(TransactionID)
+- Total Transactions = COUNT(TransactionID)
 
--Top Customer Spend = SUM(total_spent)
+- Top Customer Spend = SUM(total_spent)
 
 #### Analysis Highlights:
 
--Measures created using DAX
+- Measures created using DAX
 
--Sales by category visualized with bar charts
+- Sales by category visualized with bar charts
 
--Regional breakdown shown with a line chart
+- Regional breakdown shown with a line chart
 
--Matrix table used for cross-tab by category and region
+- Matrix table used for cross-tab by category and region
 
--KPI cards displayed headline stats
+- KPI cards displayed headline stats
 
 ### Visual Screenshots:
 ![alt text](image-6.png)
@@ -795,14 +795,14 @@ Why Power BI?
 
 #### Validation Process:
 
---Visual Consistency ChecksVerified that totals across cards and matrix visuals aligned (e.g., Total Sales matched row/column totals).
+- Visual Consistency ChecksVerified that totals across cards and matrix visuals aligned (e.g., Total Sales matched row/column totals).
 
---Filter Logic ValidationSlicers were tested (e.g., Region, Product Category) to ensure all visuals updated correctly.
+- Filter Logic ValidationSlicers were tested (e.g., Region, Product Category) to ensure all visuals updated correctly.
 
---Measure AccuracyDAX formulas were reviewed for logic and tested against visual outputs. Formatting (currency, decimals) was adjusted for clarity.
+- Measure AccuracyDAX formulas were reviewed for logic and tested against visual outputs. Formatting (currency, decimals) was adjusted for clarity.
 
---Cross-Check with Raw DataTotals were confirmed using a manual check in the data view and by using a matrix table with subtotals.
+- Cross-Check with Raw DataTotals were confirmed using a manual check in the data view and by using a matrix table with subtotals.
 
---Actionability ReviewFinal dashboard confirmed to provide clear and actionable insights (e.g., Laptops sold best, East region dominated sales).
+- Actionability ReviewFinal dashboard confirmed to provide clear and actionable insights (e.g., Laptops sold best, East region dominated sales).
 
 *Conclusion:This testing process ensured that all calculations were valid, visuals were accurate, and the dashboard supports meaningful business decision-making.
