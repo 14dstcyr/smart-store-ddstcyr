@@ -697,3 +697,112 @@ Cubing concepts (such as slicing, dicing, and drilldowns) are still widely used,
 Ensure that the OLAP scripts you run are compatible with the schema of your data warehouse. This example assumes a specific schema (detailed below).
 
 ## Data Warehouse Schema and Example Data
+
+### Section 1. The Business Goal
+
+Business Question:Which product categories and customer segments are driving the highest sales across different regions and time periods?
+
+Why It Matters:Understanding how sales vary by region, product category, and customer spending allows the business to:
+
+-Identify high-performing areas for strategic investment
+
+-Adjust marketing strategies toward top-selling products
+
+-Strengthen relationships with high-value customers
+
+-Allocate inventory more efficiently
+---
+
+### Section 2. Data Source
+
+Initial Dataset:A prepared data warehouse was used with fact and dimension tables:
+
+-sales_data_prepared (fact table)
+
+-products_data_prepared (dimension)
+
+-customers_data_prepared (dimension)
+
+-top_customers (aggregated summary)
+
+#### Columns Used:
+
+-From sales_data_prepared: SaleAmount, SaleDate, SaleYear, SaleQuarter, ProductID, CustomerID, Region
+
+-From products_data_prepared: ProductID, Category, ProductName
+
+-From customers_data_prepared: CustomerID, Name, Region, RewardPoints
+
+-From top_customers: CustomerID, total_spent
+---
+### Section 3. Tools
+
+Tool Used: Power BI
+
+Why Power BI?
+
+-User-friendly interface for OLAP-style slicing and dicing
+
+-Strong support for calculated measures (DAX)
+
+-Rich visuals including KPI cards, bar/line charts, and matrix tables
+
+-Easy to model relationships in a star schema
+
+-Interactive slicers for region, product category, and time
+---
+### Section 4. Workflow & Logic
+
+#### Dimensions Used:
+
+-Product Category
+
+-Region
+
+-Time (Year & Quarter)
+
+-Customer Segment (top customers)
+
+#### Aggregations:
+
+-Total Sales = SUM(SaleAmount)
+
+-Average Sale = AVERAGE(SaleAmount)
+
+-Total Transactions = COUNT(TransactionID)
+
+-Top Customer Spend = SUM(total_spent)
+
+#### Analysis Highlights:
+
+-Measures created using DAX
+
+-Sales by category visualized with bar charts
+
+-Regional breakdown shown with a line chart
+
+-Matrix table used for cross-tab by category and region
+
+-KPI cards displayed headline stats
+
+### Visual Screenshots:
+![alt text](image-6.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
+
+### Section 5. Test and Validate
+
+#### Validation Process:
+
+--Visual Consistency ChecksVerified that totals across cards and matrix visuals aligned (e.g., Total Sales matched row/column totals).
+
+--Filter Logic ValidationSlicers were tested (e.g., Region, Product Category) to ensure all visuals updated correctly.
+
+--Measure AccuracyDAX formulas were reviewed for logic and tested against visual outputs. Formatting (currency, decimals) was adjusted for clarity.
+
+--Cross-Check with Raw DataTotals were confirmed using a manual check in the data view and by using a matrix table with subtotals.
+
+--Actionability ReviewFinal dashboard confirmed to provide clear and actionable insights (e.g., Laptops sold best, East region dominated sales).
+
+*Conclusion:This testing process ensured that all calculations were valid, visuals were accurate, and the dashboard supports meaningful business decision-making.
