@@ -57,7 +57,7 @@ This section walks you through the steps to starting a new project [02-Project-I
 5. Create a local project virtual environment for Python.
    
 #### 03-Repeatable-Workflow
--Go to [03-Repeatable-Workflow] (./03-repeatable-workflow/REPEATABLE-WORKFLOW.md) for ongoing project development.
+* Go to [03-Repeatable-Workflow] (./03-repeatable-workflow/REPEATABLE-WORKFLOW.md) for ongoing project development.
 ---
 This section provides the repeatable steps for working on Python projects. These steps are typically followed whenever we make changes to a project. The workflow includes:
 
@@ -68,7 +68,7 @@ This section provides the repeatable steps for working on Python projects. These
 5. Make updates, verify the code still runs, and git add-commit-push to GitHub.
 ---
 ### BI Python w/External Packages (.venv, execute, add-commit-push)
-## smart-sales-starter-files
+### smart-sales-starter-files
 
 Starter files to initialize the smart sales project.
 
@@ -78,7 +78,7 @@ Starter files to initialize the smart sales project.
 
 Run all commands from a terminal in the root project folder. 
 
-### Step 1A - Create a Local Project Virtual Environment
+#### Step 1A - Create a Local Project Virtual Environment
 
 ```shell
 python3 -m venv .venv
