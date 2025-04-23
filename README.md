@@ -844,3 +844,114 @@ Why Power BI?
 - Actionability ReviewFinal dashboard confirmed to provide clear and actionable insights (e.g., Laptops sold best, East region dominated sales).
 
 **Conclusion:** This testing process ensured that all calculations were valid, visuals were accurate, and the dashboard supports meaningful business decision-making.
+
+---
+
+### Custom Final Project
+
+**Scenario**
+
+In Module 7, we bring everything together by creating a custom BI decision support project that reflects real-world business intelligence challenges. You'll define a specific business goal, build a BI solution using the skills and tools from previous modules, and present your insights effectively.
+
+We explore the role of AI and data ethics in business intelligence, addressing how automated decision-making and data-driven insights must align with ethical principles and business goals.
+This short module is intended to consolidate learning and prepare you for independent BI work.
+________________________________________
+**Objectives**
+
+•	Design and implement a custom BI project to answer a defined business question.
+
+•	Evaluate the ethical implications of using AI and automated decision-making in BI.
+
+•	Present clear, actionable insights through effective visualizations and narratives.
+
+•	Document your process and explain key challenges and decisions.
+ 
+________________________________________
+**Workflow**
+This module follows a streamlined process to reflect real-world BI implementation:
+1.	Define - Choose a business goal and data set.
+2.	Develop - Create a BI solution using the tools from previous modules.
+3.	Analyze - Generate insights using slicing, dicing, and aggregations.
+4.	Present - Summarize insights with clear visualizations and explanations.
+5.	Reflect - Discuss the challenges, limitations, and ethical considerations.
+________________________________________
+##### Task 1: Define Your Custom BI Project
+Choose a business goal aligned with your data warehouse and analysis capabilities:
+What is the business question you want to answer?
+What data sources will you use?
+What descriptive dimensions and numeric metrics are relevant?
+What visualizations will communicate your insights effectively?
+
+Example Goal
+
+"Identify the most profitable product category by month and region over the last year."
+ 
+________________________________________
+##### Task 2: Develop Your BI Solution 
+ 
+Use the tools from earlier modules:
+Python + Spark – Ideal for large-scale data processing.
+Power BI – Great for intuitive visualization and dashboarding.
+Tableau or Seaborn – Alternative visualization tools for more flexibility.
+Example Python Code
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+##### Load data
+df = pd.read_csv('data/prepared/sales_data_prepared.csv')
+
+##### Aggregate data
+result = df.groupby(['product_category', 'month'])['sale_amount'].sum().reset_index()
+
+##### Create visualization
+sns.barplot(data=result, x='product_category', y='sale_amount', hue='month')
+plt.show()
+ 
+Example Power BI Query
+SELECT product_category, SUM(sale_amount) AS total_sales
+FROM sales
+GROUP BY product_category, month;
+ 
+________________________________________
+##### Task 3: Generate Insights & Create Visualizations
+
+Generate and visualize the information needed. 
+Choices will reflect the business goad. You might want to focus on one (or more) of these:
+
+    •	Slicing and Dicing - Break down data by product, region, and time.
+    •	Drilldown - Show detailed performance by product and region.
+    •	Trend Analysis - Identify patterns over time.
+    •	Ranking and Grouping - Rank products by profitability.
+
+##### Task 4: Reflect on BI Ethics & AI
+Consider the ethical implications of using AI and automated decision-making:
+
+1.	Is the data being used responsibly?  
+2.	Could the analysis reinforce biases?  
+3.	Are you making decisions based on incomplete or unverified data?  
+4.	How can the business use the insights responsibly? 
+________________________________________
+
+##### Task 5: Document and Submit Your Work
+ 
+Include in your README.md - sections must be clearly numbered. Using Markdown formatting (ask your favorite AI for help). 
+
+Section 1. The Business Goal: 
+Section 2. Data Source:  
+Section 3. Tools Used: 
+Section 4. Workflow & Logic:  
+Section 5. Results (narrative + visualizations):  
+Section 6. Suggested Business Action:  
+Section 7. Challenges:  
+Section 8. Ethical Considerations:  
+
+Remember to git add-commit-push. For example:
+```
+git add .
+git commit -m "Completed custom BI project"
+git push -u origin main
+
+```
+![alt text](Figure_1.png)
+
